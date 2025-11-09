@@ -36,6 +36,15 @@ pipeline {
                 }
             }
         }
+        stage ('unit testing') {
+            steps {
+                script {
+                    sh """
+                      echo "unit test"
+                    """
+                }
+            }
+        }
         stage ('docker build') {
             steps {
                 script {
