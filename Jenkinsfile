@@ -42,7 +42,7 @@ pipeline {
                     withAWS(credentials: 'aws-creds', region: 'us-east-1') {
                         sh """
                             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 576195058746.dkr.ecr.us-east-1.amazonaws.com
-                            docker build -t 576195058746.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:latest.
+                            docker build -t 576195058746.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:latest .
                             docker push 576195058746.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:latest
                         """
                     }
